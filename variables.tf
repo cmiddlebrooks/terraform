@@ -3,6 +3,9 @@ variable "aws_region" {
   default = "east-1"
 }
 
+variable "AWS_ACCESS_KEY_ID" {}
+variable "AWS_SECRET_ACCESS_KEY" {}
+
 variable "aws_account_name" {
   default = "terraform_user"
 }
