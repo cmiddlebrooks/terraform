@@ -35,7 +35,7 @@ variable "vpc_public_subnets" {
 variable "vpc_private_subnets" {
   description = "Private subnets for VPC"
   type        = list(string)
-  default     = ["172.30.1000.0/24", "172.30.101.0/24", "172.30.102.0/24", "172.30.103.0/24"]
+  default     = ["172.30.100.0/24", "172.30.101.0/24", "172.30.102.0/24", "172.30.103.0/24"]
 }
 
 variable "vpc_tags" {
