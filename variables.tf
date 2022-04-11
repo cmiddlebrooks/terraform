@@ -1,6 +1,6 @@
 
 variable "aws_region" {
-  default = "us-east-1"
+  default = "us-west-1"
 }
 
 variable "aws_account_name" {
@@ -10,32 +10,32 @@ variable "aws_account_name" {
 variable "vpc_name" {
   description = "Name of VPC"
   type        = string
-  default     = "ctrl-vpc"
+  default     = "aws-cali-transit-vpc"
 }
 
 variable "vpc_cidr" {
   description = "CIDR block for mgmt VPC"
   type        = string
-  default     = "10.100.0.0/16"
+  default     = "172.30.0.0/16"
 }
 
 variable "vpc_azs" {
   description = "Availability zones for VPC"
   type        = list(string)
-  default     = ["us-east-1a"]
+  default     = ["us-west-1a", "us-west-1b"]
 }
 
 
 variable "vpc_public_subnets" {
   description = "Public subnets for VPC"
   type        = list(string)
-  default     = ["10.100.0.0/24", "10.100.1.0/24"]
+  default     = ["172.30.0.0/24", "172.30.1.0/24", "172.30.2.0/24", "172.30.3.0/24"]
 }
 
 variable "vpc_private_subnets" {
-  description = "Public subnets for VPC"
+  description = "Private subnets for VPC"
   type        = list(string)
-  default     = ["10.100.100.0/24", "10.100.101.0/24"]
+  default     = ["172.30.1000.0/24", "172.30.101.0/24", "172.30.102.0/24", "172.30.103.0/24"]
 }
 
 variable "vpc_tags" {
