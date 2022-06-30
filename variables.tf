@@ -4,19 +4,19 @@ variable "aws_region" {
 }
 
 variable "aws_account_name" {
-  default = "terraform_user"
+  default = "craigm"
 }
 
 variable "vpc_name" {
   description = "Name of VPC"
   type        = string
-  default     = "aws-cali-transit-vpc"
+  default     = "aws-us-west-1-MAN-vpc1"
 }
 
 variable "vpc_cidr" {
   description = "CIDR block for mgmt VPC"
   type        = string
-  default     = "172.30.0.0/16"
+  default     = "10.0.0.0/16"
 }
 
 variable "vpc_azs" {
@@ -29,13 +29,13 @@ variable "vpc_azs" {
 variable "vpc_public_subnets" {
   description = "Public subnets for VPC"
   type        = list(string)
-  default     = ["172.30.0.0/24", "172.30.1.0/24", "172.30.2.0/24", "172.30.3.0/24"]
+  default     = ["10.0.0.0/23", "10.0.2.0/23"]
 }
 
 variable "vpc_private_subnets" {
   description = "Private subnets for VPC"
   type        = list(string)
-  default     = ["172.30.100.0/24", "172.30.101.0/24", "172.30.102.0/24", "172.30.103.0/24"]
+  default     = ["10.0.4.0/23", "10.0.6.0/23"]
 }
 
 variable "vpc_tags" {
@@ -43,7 +43,7 @@ variable "vpc_tags" {
   type        = map(string)
   default = {
     Terraform   = "True"
-    Environment = "Project"
+    Environment = "Lab"
   }
 }
 
@@ -51,6 +51,7 @@ variable "vpc_tags" {
 
 access_key = var.AWS_ACCESS_KEY_ID
 secret_key = var.AWS_SECRET_ACCESS_KEY
+
 variable "AWS_ACCESS_KEY_ID" {}
 variable "AWS_SECRET_ACCESS_KEY" {}
 
